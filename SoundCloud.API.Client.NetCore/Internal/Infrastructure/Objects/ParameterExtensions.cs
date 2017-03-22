@@ -59,7 +59,7 @@ namespace SoundCloud.API.Client.Internal.Infrastructure.Objects
             foreach (var value in Enum.GetValues(typeof(TEnum)))
             {
                 var field = value.GetType().GetField(value.ToString());
-                var attribute = field.GetType().GetTypeInfo().GetCustomAttribute(typeof(ParameterAttribute)) as ParameterAttribute;
+                var attribute = field.GetCustomAttribute(typeof(ParameterAttribute)) as ParameterAttribute;
                 if (attribute == null)
                 {
                     continue;
