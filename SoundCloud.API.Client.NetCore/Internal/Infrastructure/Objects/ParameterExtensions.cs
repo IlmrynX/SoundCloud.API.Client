@@ -11,7 +11,7 @@ namespace SoundCloud.API.Client.Internal.Infrastructure.Objects
         internal static string GetParameterName<TEnum>(this TEnum value) where TEnum : struct
         {
             var field = value.GetType().GetField(value.ToString());
-            var attribute = field.GetType().GetTypeInfo().GetCustomAttribute(typeof(ParameterAttribute)) as ParameterAttribute;
+            var attribute = field.GetCustomAttribute(typeof(ParameterAttribute)) as ParameterAttribute;
             if (attribute == null)
             {
                 throw new NotImplementedException(string.Format("ParameterAttribute not found for value {0}", value));
