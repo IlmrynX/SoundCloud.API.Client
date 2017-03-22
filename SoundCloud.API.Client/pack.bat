@@ -1,1 +1,0 @@
-nuget pack SoundCloud.API.Client.csproj -Prop Configuration=Release
